@@ -6,12 +6,10 @@ from nodes import chat_node
 
 load_dotenv()
 
-llm = init_chat_model(model = 'openai:gpt-4o')
 
 
 builder = StateGraph(MessagesState)
 builder.add_node('chat_node', chat_node)
-
 
 builder.add_edge(START, 'chat_node')
 builder.add_edge('chat_node', END)
