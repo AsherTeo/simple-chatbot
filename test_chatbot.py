@@ -8,7 +8,7 @@ from uuid import uuid4
 def test_pipeline():
 
     fake_llm = MagicMock()
-    fake_llm.return_value = AIMessage({'content': 'Today is Friday!!!!'})
+    fake_llm.return_value = AIMessage(content='Today is Friday!!!!')
 
     with patch.object(nodes, 'llm', fake_llm):
         config = {'configurable': {'thread_id': uuid4()}}
