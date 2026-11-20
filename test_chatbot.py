@@ -15,4 +15,4 @@ def test_pipeline():
 
         response = graph.invoke({'messages': [{'role': 'user', 'content': 'What day is today?'}]}, config)
 
-        assert response['messages'][-1].content == fake_llm.invoke.return_value
+        assert response['messages'][-1].content == fake_llm.invoke.return_value.content
