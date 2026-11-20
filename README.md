@@ -17,8 +17,8 @@ uvicorn api:api --port 8000
 
 ## Run with Docker
 ```bash
-docker build -t chatbot .
-docker run -d -p 8000:8000 --env-file .env --name chatbot chatbot
+docker build -t chatbot_images .
+docker run -d -p 8000:8000 --env-file .env --name chatbot_container chatbot_images
 ```
 
 ## Usage
