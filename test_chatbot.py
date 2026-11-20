@@ -26,8 +26,10 @@ def test_end_point():
     fake_graph.invoke.return_value = AIMessage(content='Today is Sunny!!!!')
 
     with patch.object(api_module, 'graph', fake_graph):
-        config = {'configurable': {'thread_id': uuid4()}}
-
+    
         response = client.post("/chat", json = "What weather is today?")
 
-        assert response['messages'][-1].content == 'Today is Sunny!!!!'
+        assert response.status_code == 200
+        assert response.json() == {"AI": "Today is Sunny!!!!"}
+
+        
