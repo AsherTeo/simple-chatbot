@@ -8,7 +8,6 @@ from typing import Literal, Optional
 class Query(BaseModel):
     q : str 
 
-
 api = FastAPI()
 
 @api.get('/home')
@@ -24,3 +23,4 @@ def chat(prompt: Query):
 
 if __name__ == "__main__":
     uvicorn.run(api, host= "0.0.0.0", port= 8000, reload=True)
+

@@ -27,7 +27,7 @@ def test_end_point():
 
     with patch.object(api_module, 'graph', fake_graph):
     
-        response = client.post("/chat", json = "What weather is today?")
+        response = client.post("/chat", json = {"q": "What weather is today?"})
 
         assert response.status_code == 200
         assert response.json() == {"AI": "Today is Sunny!!!!"}
